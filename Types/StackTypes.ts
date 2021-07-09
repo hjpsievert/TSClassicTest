@@ -6,9 +6,9 @@ export type RootStackParamList = {
     Composers: { searchString: string };
 };
 
-export type ComposerScreenRouteProp = RouteProp<RootStackParamList, 'Composers'>;
+ type ComposerScreenRouteProp = RouteProp<RootStackParamList, 'Composers'>;
 
-export type ComposerScreenNavigationProp = StackNavigationProp<
+ type ComposerScreenNavigationProp = StackNavigationProp<
     RootStackParamList,
     'Composers'
 >;
