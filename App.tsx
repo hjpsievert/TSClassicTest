@@ -2,43 +2,25 @@ import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
-import { NavigationContainer, RouteProp } from '@react-navigation/native';
-import { createStackNavigator,  StackNavigationProp } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import ComposerScreen from './Screens/ComposerScreen';
+import * as stackTypes from './Types/StackTypes';
 
-type RootStackParamList = {
-  Home: undefined;
-  Profile: { userId: string };
-};
+const RootStack = createStackNavigator<stackTypes.RootStackParamList>();
 
-type ProfileScreenRouteProp = RouteProp<RootStackParamList, 'Profile'>;
-
-type ProfileScreenNavigationProp = StackNavigationProp<
-  RootStackParamList,
-  'Profile'
->;
-
-type Props = {
-  navigation: ProfileScreenNavigationProp;
-  route: ProfileScreenRouteProp;
-};
-
-const RootStack = createStackNavigator<RootStackParamList>();
-
-const HomeScreen = ({ navigation }: Props) => {
+const HomeScreen = ({ navigation }: stackTypes.Props) => {
   return (
     <View style={styles.container}>
       <Button
-        title="Go to Jane's profile"
+        title="Get Composer List"
         onPress={() =>
-          navigation.navigate('Profile', { userId: 'Jane' })
+          navigation.navigate('Composers', { searchString: '' })
         }
       />
       <Text>Ready to Revive Classical Music in style and with navigation!</Text>
     </View>
   );
-};
-const ProfileScreen = ({ route, navigation }: Props) => {
-  return <Text>This is {route.params.userId}'s profile</Text>;
 };
 
 export default function App() {
@@ -51,8 +33,8 @@ export default function App() {
           options={{ title: 'Welcome' }}
         />
         <RootStack.Screen
-          name="Profile"
-          component={ProfileScreen}
+          name="Composers"
+          component={ComposerScreen}
         />
       </RootStack.Navigator>
     </NavigationContainer>
