@@ -18,7 +18,7 @@ export default function App() {
           component={HomeScreen}
           options={({ navigation }) => ({
             title: 'Manage Compositions',
-            headerTitle: "Search and create compositions",
+            headerTitle: "Search and edit compositions",
             headerStyle: { backgroundColor: '#405ce8' },
             headerTitleStyle: { fontWeight: 'normal' },
             headerTintColor: 'white',
