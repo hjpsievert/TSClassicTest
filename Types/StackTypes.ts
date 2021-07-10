@@ -8,7 +8,7 @@ export type RootStackParamList = {
 
  type ComposerScreenRouteProp = RouteProp<RootStackParamList, 'Composers'>;
 
- type ComposerScreenNavigationProp = StackNavigationProp<
+ export type ComposerScreenNavigationProp = StackNavigationProp<
     RootStackParamList,
     'Composers'
 >;

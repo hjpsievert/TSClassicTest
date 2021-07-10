@@ -1,10 +1,40 @@
 import React from 'react';
-import { Text } from 'react-native';
-import {Props} from '../Types/StackTypes';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { TabParamList } from '../Types/TabTypes';
+import FindScreen from '../Screens/FindScreen';
+import EditScreen from '../Screens/EditScreen';
 
+const BottomTab = createBottomTabNavigator<TabParamList>();
 
-const ComposerScreen = ({ route, navigation }: Props) => {
-    return <Text>This is {route.params.searchString}'s profile</Text>;
+function ComposerScreen() {
+    return (
+        <BottomTab.Navigator>
+            <BottomTab.Screen
+                name="Find"
+                component={FindScreen}
+                options={({ navigation }) => ({
+                    title: 'Find',
+                    headerTitle: "Find Composers",
+                    headerStyle: { backgroundColor: '#405ce8' },
+                    headerTitleStyle: { fontWeight: 'normal' },
+                    headerTintColor: 'white',
+                    headerTitleAlign: 'center'
+                })}
+            />
+            <BottomTab.Screen
+                name="Edit"
+                component={EditScreen}
+                options={({ navigation }) => ({
+                    title: 'Edit',
+                    headerTitle: "Edit Composers",
+                    headerStyle: { backgroundColor: '#405ce8' },
+                    headerTitleStyle: { fontWeight: 'normal' },
+                    headerTintColor: 'white',
+                    headerTitleAlign: 'center'
+                })}
+            />
+        </BottomTab.Navigator>
+    );
 };
 
 export default ComposerScreen;
