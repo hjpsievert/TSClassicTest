@@ -6,7 +6,7 @@ const HomeScreen = ({ route, navigation }: Props) => {
     return (
         <View style={styles.container}>
             <Button
-                title="Get Composer List"
+                title="Manage Composer List"
                 onPress={() =>
                     navigation.navigate('Composers', { searchString: '' })
                 }
