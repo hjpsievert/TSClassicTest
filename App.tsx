@@ -11,7 +11,9 @@ const RootStack = createStackNavigator<RootStackParamList>();
 
 export default function App() {
   return (
+
     <NavigationContainer>
+      <StatusBar style="light" />
       <RootStack.Navigator>
         <RootStack.Screen
           name="Home"
