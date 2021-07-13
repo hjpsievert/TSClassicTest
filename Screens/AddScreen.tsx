@@ -3,13 +3,13 @@ import React from 'react';
 import { View, Text, StyleSheet, Dimensions, TouchableHighlight } from 'react-native';
 
 
-const EditScreen = ({ route, navigation }: BuildStackProps) => {
+const AddScreen = ({ route, navigation }: BuildStackProps) => {
     return (
         <View style={{ height: Dimensions.get('window').height - 75 }} >
 
             <View style={{ flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center', paddingLeft: 10, paddingTop: 5, paddingBottom: 5, backgroundColor: '#75aaff', borderBottomColor: '#bbb', borderBottomWidth: 1 }}>
                 <Text style={{ fontSize: 18, color: 'black', textAlign: 'left', paddingLeft: 5, paddingTop: 3, paddingBottom: 3 }}>
-                    Edit Composers
+                    Add Composers
                 </Text>
             </View>
             <View style={{ flex: 1, flexDirection: 'column', justifyContent: 'space-between' }}>
@@ -20,7 +20,7 @@ const EditScreen = ({ route, navigation }: BuildStackProps) => {
         </View>
     )
 };
-export default EditScreen;
+export default AddScreen;
 
 const styles = StyleSheet.create({
     body: {
