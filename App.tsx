@@ -5,7 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import ComposerScreen from './Screens/Composer';
 import HomeScreen from './Screens/Home';
-import { RootStackParamList } from './Types/StackTypes';
+import { RootStackParamList } from './Types/RootStackTypes';
 
 const RootStack = createStackNavigator<RootStackParamList>();
 
@@ -19,8 +19,8 @@ export default function App() {
           name="Home"
           component={HomeScreen}
           options={({ navigation }) => ({
-            title: 'Manage Compositions',
-            headerTitle: "Search and edit compositions",
+            title: 'Manage Music Database',
+            headerTitle: "Search and Build Music Database",
             headerStyle: { backgroundColor: '#405ce8' },
             headerTitleStyle: { fontWeight: 'normal' },
             headerTintColor: 'white',
@@ -31,7 +31,7 @@ export default function App() {
           name="Composers"
           component={ComposerScreen}
           options={({ navigation }) => ({
-            title: 'My Home',
+            title: 'Composers',
             headerTitle: "Manage Composers",
             headerStyle: { backgroundColor: '#405ce8' },
             headerTitleStyle: { fontWeight: 'normal' },

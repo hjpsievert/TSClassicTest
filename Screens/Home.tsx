@@ -1,12 +1,12 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
-import { Props } from '../Types/StackTypes';
+import { RootStackProps } from '../Types/RootStackTypes';
 
-const HomeScreen = ({ route, navigation }: Props) => {
+const HomeScreen = ({ route, navigation }: RootStackProps) => {
     return (
         <View style={styles.container}>
             <Button
-                title="Manage Composer List"
+                title="Manage Composers"
                 onPress={() =>
                     navigation.navigate('Composers', { searchString: '' })
                 }

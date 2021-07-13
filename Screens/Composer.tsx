@@ -2,16 +2,16 @@ import React from 'react';
 import { View, Platform } from 'react-native';
 import { Icon } from 'react-native-elements';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { TabParamList } from '../Types/TabTypes';
+import { ComposerTabParamList } from '../Types/ComposerTabTypes';
 import FindScreen from '../Screens/FindScreen';
-import EditScreen from '../Screens/EditScreen';
+import Build from '../Screens/BuildStack';
 
-const BottomTab = createBottomTabNavigator<TabParamList>();
+const ComposerBottomTab = createBottomTabNavigator<ComposerTabParamList>();
 
 function ComposerScreen() {
     return (
-        <BottomTab.Navigator>
-            <BottomTab.Screen
+        <ComposerBottomTab.Navigator>
+            <ComposerBottomTab.Screen
                 name="Find"
                 component={FindScreen}
                 options={({ navigation }) => ({
@@ -35,12 +35,12 @@ function ComposerScreen() {
                     }
                 })}
             />
-            <BottomTab.Screen
-                name="Edit"
-                component={EditScreen}
+            <ComposerBottomTab.Screen
+                name="Build"
+                component={Build}
                 options={({ navigation }) => ({
-                    title: 'Edit',
-                    headerTitle: "Edit Composers",
+                    title: 'Build',
+                    headerTitle: "Build Composers",
                     headerStyle: { backgroundColor: '#405ce8' },
                     headerTitleStyle: { fontWeight: 'normal' },
                     headerTintColor: 'white',
@@ -59,7 +59,7 @@ function ComposerScreen() {
                     }
                 })}
             />
-        </BottomTab.Navigator>
+        </ComposerBottomTab.Navigator>
     );
 };
 
