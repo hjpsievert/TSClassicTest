@@ -8,12 +8,15 @@ import { loadComposers } from '../Utils/API';
 const FindScreen = ({ route, navigation }: ComposerTabProps) => {
 
     type ComposerType = {
-        id: number;
+        composerID: number;
         last: string;
         first: string;
+        prefix: string;
+        suffix: string;
         born: Date;
         died: Date;
         period: string;
+        periodID: number;
     };
 
     type APIReturn = {
@@ -63,7 +66,7 @@ const FindScreen = ({ route, navigation }: ComposerTabProps) => {
                 <View style={{ flexShrink: 1, borderTopWidth: 1, borderTopColor: '#666', borderBottomWidth: 1, borderBottomColor: '#666' }}>
                     <FlatList
                         data={data}
-                        keyExtractor={(item) => item.id.toString()}
+                        keyExtractor={(item) => item.composerID.toString()}
                         renderItem={({ item }) => renderComposer(item)}
                     />
                 </View>
