@@ -14,7 +14,10 @@ export default function App() {
 
     <NavigationContainer>
       <StatusBar style="light" />
-      <RootStack.Navigator>
+      <RootStack.Navigator
+        initialRouteName={'Home'}
+        headerMode={'screen'}
+      >
         <RootStack.Screen
           name="Home"
           component={HomeScreen}

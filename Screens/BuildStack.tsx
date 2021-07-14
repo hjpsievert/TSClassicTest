@@ -11,11 +11,15 @@ const BuildStack = createStackNavigator<BuildStackParamList>();
 
 const Build = ({ route, navigation }: ComposerTabProps) => {
     return (
-        <BuildStack.Navigator>
+        <BuildStack.Navigator
+        initialRouteName={'Build'}
+        headerMode={'screen'}
+        >
             <BuildStack.Screen
                 name="Build"
                 component={BuildScreen}
                 options={({ navigation }) => ({
+                    headerShown: false,
                     title: 'Build Composer Database',
                     headerTitle: "Add or Edit Composers",
                     headerStyle: { backgroundColor: '#405ce8' },
@@ -29,6 +33,7 @@ const Build = ({ route, navigation }: ComposerTabProps) => {
                 component={EditScreen}
                 options={({ navigation }) => ({
                     title: 'Build Composer Database',
+                    headerShown: false,
                     headerTitle: "Add or Edit Composers",
                     headerStyle: { backgroundColor: '#405ce8' },
                     headerTitleStyle: { fontWeight: 'normal' },
@@ -42,6 +47,7 @@ const Build = ({ route, navigation }: ComposerTabProps) => {
                 component={AddScreen}
                 options={({ navigation }) => ({
                     title: 'Build Composer Database',
+                    headerShown: false,
                     headerTitle: "Add or Edit Composers",
                     headerStyle: { backgroundColor: '#405ce8' },
                     headerTitleStyle: { fontWeight: 'normal' },
