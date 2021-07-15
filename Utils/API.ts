@@ -23,5 +23,5 @@ const processRequest = function (cb: Function, mode: string = 'GET', path: strin
 
 export const loadComposers = function (cb: Function) {
     const mode: string = 'GET';
-    return processRequest(cb, mode, 'ShowComposer?code=q6afFxk5RGvSeAPHysOSnVuU47fb23n5L8vvbLHjWShKCAAkmPpQvA==', '');
+    return processRequest(cb, mode, 'ShowComposers?code=BGuOLAywmG8i4jziU85C5bthxbfj3He9H905nK4QkqDNr2HSKJQINw==', '');
   }
